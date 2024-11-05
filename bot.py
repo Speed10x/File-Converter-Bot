@@ -97,7 +97,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://your-app-name.onrender.com/' + TOKEN)
+    bot.set_webhook(url='https://file-converter-bot-98ux.onrender.com/' + TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
