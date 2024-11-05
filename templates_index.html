@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        #qr-code {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Converter Bot</h1>
+        <p>Scan the QR code below to start using the bot:</p>
+        <div id="qr-code"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script>
+        const botUsername = 'YourBotUsername'; // Replace with your bot's username
+        const qr = qrcode(0, 'M');
+        qr.addData(`https://t.me/${botUsername}`);
+        qr.make();
+        document.getElementById('qr-code').innerHTML = qr.createImgTag(6);
+    </script>
+</body>
+</html>
